@@ -1,7 +1,7 @@
 # Txt2MdLinkFormatter
 Python code to identify links/URL from a text file and Format it as required in Markdown to have inline Hyperlink
 
-How this works:
+**How this works:**
 
 * Read the input Text file line by line
 * Extracting required URLs using *Regex* (also eliminating that are already in Markdown compatible format)
