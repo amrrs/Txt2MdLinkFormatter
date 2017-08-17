@@ -9,24 +9,25 @@ android_urls = ['https://www.analyticsvidhya.com/blog/2017/01/the-most-comprehen
    
 
 def data_extract(url):
-    
+    try:
     #for name in urls:
-    request = urllib2.Request(url,headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'})
+        request = urllib2.Request(url,headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'})
     
-    url_content = urllib2.urlopen(request).read()
+        url_content = urllib2.urlopen(request).read()
 
-    soup = BeautifulSoup(url_content, "html.parser")
+        soup = BeautifulSoup(url_content, "html.parser")
 
-    if soup.find('title') is not None:
-        title = soup.find('title').text.strip()
-    else:
-        title = ''
+        if soup.find('title') is not None:
+            title = soup.find('title').text.strip()
+        else:
+            title = url
 
-    return("["+title+"]("+url+")")
+        return("* ["+title+"]("+url+")")
 
-
+    except:
+        return("* ["+url+"]("+url+")")
 f = open('C:/Users/SA31/Desktop/readme.txt')
-fo = open('C:/Users/SA31/Desktop/readme_o.txt','w')
+fo = open('C:/Users/SA31/Desktop/readme_o.md','w')
 next = f.readline()
 while next != "":
     print(next)
@@ -44,4 +45,3 @@ while next != "":
  
 fo.close()    
     
-#data_extract(android_urls)
