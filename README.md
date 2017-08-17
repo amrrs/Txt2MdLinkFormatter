@@ -16,6 +16,9 @@ My *README.md* Markdown of [this repo](https://github.com/amrrs/For-Data-Science
 
 The current code is a bit slow as it scrapes the entire website
 
+**BottomLine**
+
 Nevertheless, This code has released me from a boring manual task of adding [](), a few tab opens and Copy+paste
 
+## Feel free to fork this and play with the code! 
 
